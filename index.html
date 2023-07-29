@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tap Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Customize the appearance of the animation container */
+    #animation-container {
+      width: 200px;
+      height: 200px;
+      background-image: url('heart.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      cursor: pointer;
+      animation: tapAnimation 1s infinite;
+    }
+
+    /* Define the animation keyframes */
+    @keyframes tapAnimation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Hide the message container by default */
+    #message-container {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 44px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Animation container -->
+  <div id="animation-container"></div>
+
+  <!-- Message container -->
+  <div id="message-container">
+    <img src="cat.jpg" alt="Heart" width="500">
+    <p style="font-size: 52px; font-weight: bold;">I hate u</p>
+  </div>
+
+  <script>
+    // JavaScript to show the message when tapping on the animation
+    document.getElementById('animation-container').addEventListener('click', function() {
+      document.getElementById('message-container').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
